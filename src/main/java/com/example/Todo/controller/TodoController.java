@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.Todo.services.TodoService;
 
 @Controller
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TodoController {
 

@@ -35,7 +35,7 @@ public class TodoServiceTests {
 
         ResponseEntity<?> responseEntity1 = todoService.getTodo(10);
         Assert.assertEquals(400, responseEntity1.getStatusCodeValue());
-        Assert.assertTrue(responseEntity1.getBody().toString().contains("TODO id has exceeded"));
+        Assert.assertTrue(responseEntity1.getBody().toString().contains("Todo id has exceeded"));
     }
 
     @Test
@@ -46,17 +46,17 @@ public class TodoServiceTests {
 
         ResponseEntity<?> responseEntity1 = todoService.updateTodo(10, "{\"todoname\" : \"play\"}");
         Assert.assertEquals(400, responseEntity1.getStatusCodeValue());
-        Assert.assertTrue(responseEntity1.getBody().toString().contains("TODO id has exceeded"));
+        Assert.assertTrue(responseEntity1.getBody().toString().contains("Todo id has exceeded"));
     }
 
     @Test
     public void testDeleteTodo(){
         todoService.addTodo("{\"todoname\" : \"code\"}");
         ResponseEntity<?> responseEntity = todoService.deleteTodo(0);
-        Assert.assertTrue(responseEntity.getBody().toString().contains("ToDo 1 has been deleted"));
+        Assert.assertTrue(responseEntity.getBody().toString().contains("Todo 1 has been deleted"));
 
         ResponseEntity<?> responseEntity1 = todoService.deleteTodo(10);
         Assert.assertEquals(400, responseEntity1.getStatusCodeValue());
-        Assert.assertTrue(responseEntity1.getBody().toString().contains("TODO id has exceeded"));
+        Assert.assertTrue(responseEntity1.getBody().toString().contains("Todo id has exceeded"));
     }
 }
